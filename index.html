@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Preeti🎂✨</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 105, 180, .28), transparent 28%),
+        radial-gradient(circle at 85% 30%, rgba(120, 100, 255, .28), transparent 30%),
+        linear-gradient(135deg, #12051f, #260b45 48%, #090516);
+    }
+
+    #stars, #confetti {
+      position: fixed; inset: 0; pointer-events: none; z-index: 20;
+    }
+    .star {
+      position: absolute; width: 3px; height: 3px; border-radius: 50%;
+      background: white; opacity: .7; animation: twinkle 2.5s infinite ease-in-out;
+    }
+    @keyframes twinkle { 50% { opacity: .15; transform: scale(.5); } }
+
+    .hero {
+      min-height: 100vh; display: grid; place-items: center;
+      padding: 70px 20px 40px; position: relative;
+    }
+    .hero-card {
+      width: min(1050px, 94vw); text-align: center; padding: 42px 24px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 34px;
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 100px rgba(0,0,0,.4);
+    }
+    .badge {
+      display: inline-block; padding: 8px 16px; border-radius: 999px;
+      background: rgba(255,255,255,.12); letter-spacing: 2px; font-size: 12px;
+    }
+    h1 {
+      margin: 20px 0 8px; font-size: clamp(3rem, 9vw, 7.5rem);
+      line-height: .95; font-weight: 900;
+      background: linear-gradient(90deg,#fff,#ffd0f1,#d7c8ff,#fff);
+      background-size: 300% auto; color: transparent; background-clip: text;
+      animation: shine 5s linear infinite;
+    }
+    @keyframes shine { to { background-position: 300% center; } }
+    .subtitle { font-size: clamp(1.05rem, 2.5vw, 1.5rem); opacity: .9; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:28px; }
+    button {
+      border: 0; cursor: pointer; color:#fff; font-weight:800; font-size:15px;
+      padding: 14px 22px; border-radius: 999px;
+      background: linear-gradient(135deg,#ff4fa3,#8b5cf6);
+      box-shadow: 0 12px 30px rgba(139,92,246,.3);
+      transition: .25s transform, .25s box-shadow;
+    }
+    button:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 18px 38px rgba(255,79,163,.3); }
+    button.secondary { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); }
+
+    section { width:min(1100px,92vw); margin:0 auto; padding:85px 0; }
+    .section-title { text-align:center; font-size:clamp(2rem,5vw,3.4rem); margin:0 0 12px; }
+    .section-sub { text-align:center; opacity:.75; margin-bottom:35px; }
+
+    .gallery {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    }
+    .photo {
+      position:relative; overflow:hidden; border-radius:24px; aspect-ratio: 4/5;
+      border:1px solid rgba(255,255,255,.2);
+      background:#160a26; box-shadow:0 18px 45px rgba(0,0,0,.35);
+    }
+    .photo img { width:100%; height:100%; object-fit:cover; transition: .7s transform; }
+    .photo:hover img { transform:scale(1.08); }
+    .photo span {
+      position:absolute; left:14px; bottom:14px; padding:7px 11px;
+      border-radius:12px; background:rgba(0,0,0,.42); backdrop-filter:blur(8px);
+    }
+
+    .message {
+      text-align:center; padding:38px; border-radius:30px;
+      background:linear-gradient(135deg,rgba(255,105,180,.13),rgba(139,92,246,.13));
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .message p { font-size:clamp(1.1rem,2.4vw,1.45rem); line-height:1.8; margin:0; }
+
+    .celebrate {
+      text-align:center; min-height:620px; position:relative; overflow:hidden;
+      border-radius:34px; border:1px solid rgba(255,255,255,.14);
+      background: radial-gradient(circle at 50% 65%, rgba(255,193,7,.13), transparent 28%);
+    }
+    .cake-wrap { position:absolute; left:50%; top:48%; transform:translate(-50%,-50%); }
+    .cake {
+      position:relative; width:260px; height:180px; margin:auto;
+      animation: cakeFloat 3s ease-in-out infinite;
+    }
+    @keyframes cakeFloat { 50% { transform:translateY(-10px); } }
+    .plate { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:300px; height:25px; border-radius:50%; background:#e9d5ff; }
+    .layer { position:absolute; left:50%; transform:translateX(-50%); width:250px; height:58px; border-radius:18px; background:linear-gradient(#ff9bd0,#d83c8d); box-shadow:inset 0 -9px rgba(130,0,70,.12); }
+    .layer.one { bottom:22px; } .layer.two { bottom:72px; width:215px; background:linear-gradient(#ffc2e3,#f05aa5); }
+    .icing { position:absolute; bottom:118px; left:50%; transform:translateX(-50%); width:220px; height:22px; background:#fff4fb; border-radius:20px; }
+    .drip { position:absolute; width:15px; height:28px; background:#fff4fb; border-radius:0 0 10px 10px; }
+    .d1{left:20px}.d2{left:72px;height:38px}.d3{right:54px}.d4{right:18px;height:34px}
+    .candle { position:absolute; bottom:132px; width:12px; height:48px; border-radius:5px; background:repeating-linear-gradient(45deg,#fff 0 6px,#ff65ad 6px 12px); }
+    .c1{left:86px}.c2{left:124px}.c3{right:86px}
+    .flame { position:absolute; width:14px; height:22px; top:-21px; left:-1px; background:#ffd166; border-radius:50% 50% 50% 0; transform:rotate(-45deg); animation:flicker .6s infinite alternate; }
+    @keyframes flicker { to { transform:rotate(-45deg) scale(1.12); opacity:.8; } }
+
+    .gift-area { margin-top:400px; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+    .gift {
+      width:110px; height:90px; position:relative; cursor:pointer;
+      transform-origin:bottom; transition:.3s;
+    }
+    .gift:hover { transform:translateY(-8px) rotate(-2deg); }
+    .box { position:absolute; inset:15px 0 0; border-radius:8px; background:linear-gradient(135deg,#ff4fa3,#d6287e); }
+    .lid { position:absolute; top:5px; left:-6px; width:122px; height:25px; border-radius:8px; background:#ff75b9; }
+    .ribbon-v { position:absolute; top:5px; bottom:0; left:46px; width:18px; background:#ffd166; }
+    .ribbon-h { position:absolute; top:42px; left:0; right:0; height:15px; background:#ffd166; }
+    .bow { position:absolute; top:-8px; left:36px; width:55px; height:28px; }
+    .bow:before,.bow:after { content:""; position:absolute; width:30px;height:20px;background:#ffd166;border-radius:50% 50% 50% 10px; }
+    .bow:before{transform:rotate(25deg)} .bow:after{right:0;transform:scaleX(-1) rotate(25deg)}
+    .gift.open .lid { transform:translateY(-40px) rotate(-8deg); transition:.6s; }
+    .gift.open { animation:giftPop .7s; }
+    @keyframes giftPop { 50% { transform:scale(1.2); } }
+
+    .footer { text-align:center; padding:35px 15px 55px; opacity:.7; }
+    .hint { font-size:13px; opacity:.65; margin-top:10px; }
+
+    @media(max-width:760px){
+      .gallery { grid-template-columns:1fr; }
+      .photo { aspect-ratio: 16/11; }
+      .celebrate { min-height:600px; }
+      .gift-area { margin-top:380px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+  <canvas id="confetti"></canvas>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <div class="badge">✨ A LITTLE BIRTHDAY SURPRISE ✨</div>
+        <h1>Happy Birthday Preeti! 🎂</h1>
+        <div class="subtitle">May your day be filled with smiles, beautiful memories, cake &amp; magic. 💖</div>
+        <div class="buttons">
+          <button id="celebrateBtn">🎉 Click to Celebrate</button>
+          <button class="secondary" id="musicBtn">🎵 Play Birthday Tune</button>
+          <button class="secondary" onclick="document.getElementById('memories').scrollIntoView()">📸 Memories</button>
+        </div>
+        <div class="hint">Turn up your volume for the birthday melody 🔊</div>
+      </div>
+    </section>
+
+    <section id="memories">
+      <h2 class="section-title">Beautiful Memories 📸</h2>
+      <p class="section-sub">Three little snapshots, one big collection of memories.</p>
+      <div class="gallery">
+        <div class="photo"><img src="images/photo1.jpg" alt="Birthday memory 1"><span>🌸 Sweet memory</span></div>
+        <div class="photo"><img src="images/photo2.jpg" alt="Birthday memory 2"><span>✨ Growing up</span></div>
+        <div class="photo"><img src="images/photo3.jpg" alt="Birthday memory 3"><span>💖 Precious moment</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="message">
+        <h2 class="section-title">A Special Wish 💌</h2>
+        <p>
+        Happy birthday! 
+        Hope this year brings you everything your heart has been quietly wishing for.
+        Wishing you a day as amazing as you are. 
+        Again Happy birthday to someone who makes ordinary days feel a little more special! 🥳💐✨
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="celebrate">
+        <h2 class="section-title" style="padding-top:30px;">Make a Wish! 🌟</h2>
+        <p class="section-sub">Click the gifts to open your birthday surprises.</p>
+
+        <div class="cake-wrap">
+          <div class="cake">
+            <div class="plate"></div>
+            <div class="layer one"></div>
+            <div class="layer two"></div>
+            <div class="icing"><i class="drip d1"></i><i class="drip d2"></i><i class="drip d3"></i><i class="drip d4"></i></div>
+            <div class="candle c1"><i class="flame"></i></div>
+            <div class="candle c2"><i class="flame"></i></div>
+            <div class="candle c3"><i class="flame"></i></div>
+          </div>
+        </div>
+
+        <div class="gift-area">
+          <div class="gift" data-message="🎁 Surprise #1: With Lots of Love & happiness!">
+            <div class="lid"></div><div class="box"></div><div class="ribbon-v"></div><div class="ribbon-h"></div><div class="bow"></div>
+          </div>
+          <div class="gift" data-message="🎁 Surprise #2: Endless smiles!">
+            <div class="lid"></div><div class="box"></div><div class="ribbon-v"></div><div class="ribbon-h"></div><div class="bow"></div>
+          </div>
+          <div class="gift" data-message="🎁 Surprise #3: An amazing year ahead!">
+            <div class="lid"></div><div class="box"></div><div class="ribbon-v"></div><div class="ribbon-h"></div><div class="bow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">Made with 💖 for a very special birthday • Enjoy your day! 🎂✨</div>
+
+<script>
+  // Stars
+  const stars = document.getElementById('stars');
+  for(let i=0;i<100;i++){
+    const s=document.createElement('i');
+    s.className='star';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*3)+'s';
+    stars.appendChild(s);
+  }
+
+  // Confetti
+  const canvas=document.getElementById('confetti');
+  const ctx=canvas.getContext('2d');
+  let pieces=[], confettiRunning=false;
+  function resize(){ canvas.width=innerWidth; canvas.height=innerHeight; }
+  addEventListener('resize',resize); resize();
+
+  function burst(count=220){
+    for(let i=0;i<count;i++){
+      pieces.push({
+        x:innerWidth/2 + (Math.random()-.5)*180,
+        y:innerHeight*.42,
+        vx:(Math.random()-.5)*15,
+        vy:Math.random()*-13-4,
+        g:.28+Math.random()*.18,
+        size:5+Math.random()*8,
+        rot:Math.random()*Math.PI,
+        vr:(Math.random()-.5)*.25,
+        life:100+Math.random()*90,
+        shape:Math.random()>.5?'rect':'circle'
+      });
+    }
+    if(!confettiRunning) animateConfetti();
+  }
+  function animateConfetti(){
+    confettiRunning=true;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      p.x+=p.vx; p.vy+=p.g; p.y+=p.vy; p.rot+=p.vr; p.life--;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.globalAlpha=Math.max(0,p.life/140);
+      ctx.fillStyle=`hsl(${Math.random()*360},90%,65%)`;
+      if(p.shape==='rect') ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*1.7);
+      else {ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      ctx.restore();
+    });
+    pieces=pieces.filter(p=>p.life>0 && p.y<canvas.height+30);
+    if(pieces.length){ requestAnimationFrame(animateConfetti); }
+    else { confettiRunning=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+
+  // Simple browser-generated birthday melody; no external audio file needed.
+  let audioCtx=null, musicPlaying=false, musicTimer=null;
+  const notes = [
+    [261.63,.28],[261.63,.28],[293.66,.55],[261.63,.55],[349.23,.55],[329.63,1.0],
+    [261.63,.28],[261.63,.28],[293.66,.55],[261.63,.55],[392.00,.55],[349.23,1.0],
+    [261.63,.28],[261.63,.28],[523.25,.55],[440.00,.55],[349.23,.55],[329.63,.55],[293.66,1.0],
+    [466.16,.28],[466.16,.28],[440.00,.55],[349.23,.55],[392.00,.55],[349.23,1.0]
+  ];
+
+  function playTune(){
+    if(musicPlaying){ stopTune(); return; }
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    musicPlaying=true;
+    document.getElementById('musicBtn').textContent='⏹️ Stop Birthday Tune';
+    let t=audioCtx.currentTime+.05;
+    notes.forEach(([freq,dur])=>{
+      const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+      osc.type='sine'; osc.frequency.value=freq;
+      gain.gain.setValueAtTime(0.0001,t);
+      gain.gain.exponentialRampToValueAtTime(0.18,t+.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001,t+dur-.03);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start(t); osc.stop(t+dur);
+      t+=dur+.025;
+    });
+    musicTimer=setTimeout(()=>{ musicPlaying=false; document.getElementById('musicBtn').textContent='🎵 Play Birthday Tune'; }, (t-audioCtx.currentTime)*1000+100);
+  }
+  function stopTune(){
+    if(audioCtx) audioCtx.close();
+    clearTimeout(musicTimer); musicPlaying=false;
+    document.getElementById('musicBtn').textContent='🎵 Play Birthday Tune';
+  }
+
+  document.getElementById('musicBtn').addEventListener('click',playTune);
+  document.getElementById('celebrateBtn').addEventListener('click',()=>{
+    burst(320);
+    if(!musicPlaying) playTune();
+    document.querySelector('.celebrate').scrollIntoView({behavior:'smooth'});
+  });
+
+  document.querySelectorAll('.gift').forEach(g=>{
+    g.addEventListener('click',()=>{
+      g.classList.toggle('open');
+      burst(90);
+      if(g.classList.contains('open')){
+        setTimeout(()=>alert(g.dataset.message),250);
+      }
+    });
+  });
+
+  // Small celebration on first load
+  setTimeout(()=>burst(100),700);
+</script>
+</body>
+</html>
